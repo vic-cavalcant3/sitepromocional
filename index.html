@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Adventure</title>
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Itim&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', cursive;
+        }
+
+        body {
+            font-family: 'Poppins', cursive;
+            background-color: #ffffff;
+        }
+
+        /* Header Hero Section */
+        .hero {
+            background: linear-gradient(180deg, #FFB4A2 0%, #FF8B7A 50%, #FF7965 100%);
+            min-height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 740px;
+            object-fit: cover;
+        }
+
+        .hero-content {
+            display: flex;
+            position: absolute;
+            top: 20px;
+            right: 40px;
+        }
+
+        .texto{
+            display: flex;
+            position: absolute;
+            top: 90px;
+            right: 40px;
+            padding-right: 15px;
+            font-family: 'Poppins', cursive;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .topo {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+            display: flex;
+            padding: 5px 20px;
+             border: #2C1810 solid 1px;
+             border-radius: 20px ;
+             margin: 10px;
+             text-decoration: none;
+        }
+        .topo:hover{
+            transform: scale(1.1);
+        }
+
+        .hero-content p {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .logo {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #2C1810;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 16px;
+            font-weight: normal;
+            text-transform: lowercase;
+        }
+
+        /* Mission Section */
+        .mission-section {
+            max-width: 1400px;
+            margin: 150px 80px;
+            display: flex;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .mission-text {
+            flex: 1;
+        }
+
+        .mission-text h2 {
+            font-size: 50px;
+            margin-bottom: 10px;
+            color: #2C1810;
+            padding-left: 250px;
+        }
+
+        .mission-text h2 span {
+            color: #FF7965;
+        }
+
+        .mission-box {
+            flex: 1;
+            background-color:  #ffffff;;
+            border: 2px solid #865f3b;
+            border-radius: 20px;
+            padding: 35px;
+            width: 150px;
+        }
+
+        .mission-box p {
+            font-size: 19px;
+            line-height: 2;
+            text-align: center;
+            color: #865f3b;
+        }
+
+        .input-lines {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .input-line {
+            width: 60px;
+            height: 3px;
+            background: #333;
+            border-radius: 2px;
+        }
+
+        .game-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .game-btn {
+            background: white;
+            border: 2px solid #ddd;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .character {
+            position: absolute;
+            bottom: -20px;
+            width: 80px;
+            height: 80px;
+        }
+
+        .character-left {
+            left: -40px;
+        }
+
+        .character-right {
+            right: -40px;
+        }
+
+        .game-description {
+            flex: 1;
+        }
+
+        .jogo{
+            margin-top: 150px;
+            background-image: url('img/fundo.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            padding: 100px 0;
+        }
+
+        .game-description p {
+            font-size: 20px;
+            font-weight: 500;
+            color: #A67649;
+            padding: 50px 180px 10px 5px;
+            text-align: justify;
+        }
+
+        .nosso{
+            color: #A67649;
+            padding-top: 50px;
+            font-size: 32px;
+        }
+
+        .imgJogo{
+            width: 800px;
+            height: auto;
+            padding-left: 200px;
+        }
+
+        .learn-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #FFE5E0;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 60px 40px;
+            background: linear-gradient(180deg, #FFF 0%, #FFF5F2 100%);
+        }
+
+        .cta-section h2 {
+            font-size: 32px;
+            color: #A67649;
+            margin-bottom: 60px;
+        }
+
+        .cta-section h2 span {
+            color: #FF7965;
+            font-family: 'Poppins'
+        }
+
+        /* Cards Section */
+        .cards-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 20px 40px;
+        }
+
+        .card {
+            background: white;
+            border: 2px solid #bebebe;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: left;
+        }
+
+        .card:hover{
+            transform: scale(1.05);
+        }
+
+        .card1:hover{
+            transform: scale(1.05);
+        }
+
+        .card1 {
+            background: #A67649;
+            border: 2px solid #bebebe;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: left;
+        }
+
+        .card1 h3 {
+            font-size: 17px;
+            margin-bottom: 15px;
+            color: #ffffff;
+            line-height: 1.4;
+        }
+
+        .card1 p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .card-stars {
+            color: #FFB800;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 17px;
+            margin-bottom: 15px;
+            color: #2C1810;
+            line-height: 1.4;
+        }
+
+        .card p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #2b2b2b;
+            margin-bottom: 20px;
+        }
+
+        .card-author {
+            font-size: 12px;
+            color: #2e2e2e;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 15px;
+        }
+
+         .card1-author {
+            font-size: 12px;
+            color: #ffffff;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 15px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #FD716C;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .barco {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .barco img {
+            height: 65px;
+            width: auto;
+        }
+
+        .footer-logo img {
+            height: 55px;
+            width: auto;
+        }
+
+        .footer-item {
+            width: 60px;
+            height: 40px;
+            background: rgba(139, 69, 48, 0.3);
+            border-radius: 10px;
+        }
+
+        .footer-logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2C1810;
+        }
+
+        .nome{
+            margin: 0;
+        }
+
+        .sla{
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+        }
+
+        .jogo{
+            display: flex;
+        }
+
+        .linha{
+            border: 1px solid #e9c19c;
+            margin: 0px 50px;
+        }
+
+        /* imagem clicável */
+        .imgJogo {
+          cursor: pointer;
+          transition: transform 0.3s ease;
+          border-radius: 15px;
+        }
+
+        .imgJogo:hover {
+          transform: scale(1.02);
+        }
+
+        /* fundo escuro */
+        .popup {
+          display: none;
+          position: fixed;
+          z-index: 9999;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* imagem ampliada */
+        .popup-conteudo {
+          display: block;
+          margin: 5% auto;
+          max-width: 80%;
+          max-height: 80%;
+          border-radius: 20px;
+          box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+        }
+
+        /* botão X */
+        .fechar {
+          position: absolute;
+          top: 30px;
+          right: 50px;
+          color: white;
+          font-size: 40px;
+          font-weight: bold;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+
+        .fechar:hover {
+          color: #FF7965;
+        }
+
+        .sla{
+            font-weight: 600;
+            font-size: 17px;
+        }
+
+        @media (max-width: 768px) {
+            .mission-section,
+            .game-section {
+                flex-direction: column;
+            }
+
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                position: static;
+                margin: 20px;
+            }
+        }
+
+        /* Responsividade */
+        @media (max-width: 1200px) {
+          .mission-text h2 {
+            padding-left: 0;
+            text-align: center;
+          }
+
+          .mission-section {
+            margin: 100px 30px;
+            flex-direction: column;
+            text-align: center;
+          }
+
+          .mission-box {
+            width: 100%;
+          }
+
+          .imgJogo {
+            padding-left: 0;
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+          }
+
+          .game-description p {
+            padding: 20px;
+          }
+
+          .jogo {
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .linha {
+            display: none;
+          }
+        }
+
+        @media (max-width: 900px) {
+          .hero-content {
+            top: 10px;
+            right: 10px;
+            gap: 10px;
+          }
+
+          .topo {
+            font-size: 16px;
+            padding: 5px 15px;
+          }
+
+          .texto {
+            right: 10px;
+            font-size: 16px;
+          }
+
+          .logo img {
+            width: 200px;
+          }
+
+          .mission-text h2 {
+            font-size: 40px;
+          }
+
+          .nosso {
+            text-align: center;
+            font-size: 28px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .hero {
+            min-height: 250px;
+          }
+
+          .hero-image {
+            height: 450px;
+          }
+
+          .texto {
+            font-size: 14px;
+            top: 70px;
+          }
+
+          .mission-section {
+            margin: 60px 20px;
+          }
+
+          .mission-text h2 {
+            font-size: 32px;
+          }
+
+          .mission-box p {
+            font-size: 17px;
+            line-height: 1.8;
+          }
+
+          .game-description p {
+            font-size: 18px;
+          }
+
+          .cards-container {
+            grid-template-columns: 1fr;
+          }
+
+          .footer {
+            flex-direction: column;
+            gap: 20px;
+          }
+
+          .barco img {
+            height: 45px;
+          }
+
+          .footer-logo img {
+            height: 45px;
+          }
+        }
+
+        @media (max-width: 500px) {
+          .hero-content {
+            flex-direction: column;
+            right: 10px;
+          }
+
+          .texto {
+            top: 100px;
+            font-size: 13px;
+          }
+
+          .logo img {
+            width: 160px;
+          }
+
+          .imgJogo {
+            width: 100%;
+            border-radius: 12px;
+          }
+
+          .nosso {
+            font-size: 24px;
+          }
+
+          .game-description p {
+            font-size: 16px;
+          }
+        }
+
+        body {
+            opacity: 0;
+            animation: softFadeIn 1.2s ease-in-out forwards;
+        }
+
+        @keyframes softFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1.0s ease, transform 0.9s ease;
+        }
+
+        .fade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+      <video autoplay muted loop playsinline src="img/video.mp4" alt="Viking Adventure Scene" class="hero-image" style="display: block;"></video>
+
+      <div class="hero-content">
+        <div class="topo">
+          <a class="sla" href="#missao">Nossa Missão</a>
+        </div>
+        <div class="topo">
+          <a class="sla" href="#jogo">Entenda o jogo</a>
+        </div>
+      </div>
+
+      <div class="texto">
+        <p>Aprenda inglês de maneira lúdica e eficiente</p>
+      </div>
+
+      <div class="logo">
+        <img class="nome" src="img/nome.png" alt="">
+      </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="missao" class="mission-section fade">
+        <div class="mission-text">
+            <h2>Nossa<br><span>missão</span></h2>
+        </div>
+        <div class="mission-box">
+            <p>Embarque em English Adventure, o jogo de tabuleiro inovador com tecnologia IoT onde a 
+                diversão encontra o aprendizado. Loki, o Vitki invejoso, silenciou Fyr, o dragão guardião, 
+                e espalhou a confusão gramatical. Agora, só o seu filho, o jovem Vikid, pode ajudar as valentes 
+                Skjaldmær a reunir os 5 Cristais da Conversa e restaurar a voz do dragão!</p>
+        </div>
+    </section>
+
+    <div id="jogo" class="jogo fade">
+        <img class="imgJogo" src="img/foto2.jpeg" alt="">
+        <div id="popup" class="popup">
+          <span class="fechar">&times;</span>
+          <img class="popup-conteudo" id="imagemExpandida">
+        </div>
+        <div class="linha"></div>
+       
+        <div class="game-description"> 
+            <h2 class="nosso">Entenda nosso jogo</h2>
+            <p class="oJogo">Oferecemos a oportunidade do estudante jogar tanto modo Web como Mobile, 
+                com uma interface intuita, além de apresentarmos a opção de se jogar com o tabuleiro, 
+                que possui perguntas a qual levam o estudante a se habituar com o idioma de maneira mais leve. </p>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section fade">
+        <h2>Explore o <span>incrível</span> mundo do inglês!</h2>
+        
+        <div class="cards-container fade">
+            <div class="card">
+                <div class="card-stars">★★★★★</div>
+                <h3>O inglês finalmente se tornou uma aventura!</h3>
+                <p>Meu filho detestava as aulas de inglês, mas com o English Adventure, ele pede para 'enfrentar o Loki' todos os dias! A combinação do jogo de tabuleiro com a voz e o site é mágica. Ele não está só jogando; ele está realmente aprendendo e corrigindo os próprios erros sem nem perceber.</p>
+                <div class="card-author"> Maria P., Mãe do Aventureiro Eric</div>
+            </div>
+            
+            <div class="card1">
+                <div class="card-stars">★★★★★</div>
+                <h3>É a prova de que a tecnologia pode ser lúdica e extremamente eficiente no ensino.</h3>
+                <p>Como educadora, fiquei impressionada com a forma como o IOT e o quiz se complementam. O sistema de perguntas direcionadas no site realmente funciona, focando nos pontos fracos de cada criança.</p>
+                <div class="card1-author">Professora Helena R., Especialista em Ensino Infantil</div>
+            </div>
+            
+            <div class="card">
+                <div class="card-stars">★★★★★</div>
+                <h3> Nunca vi um método tão divertido para aprender verbos e gramática.</h3>
+                <p>As runas, o dragão e o vilão Loki são muito criativos! Meu feedback é que o tema viking é perfeito e prende a atenção das crianças. Elas se sentem verdadeiros 'Vitki' corrigindo os erros de inglês.</p>
+                <div class="card-author">João S., Pai e fã de mitologia nórdica</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="barco">
+            <img src="img/barco1.png" alt="">
+            <img src="img/barco2.png" alt="">
+            <img src="img/barco1.png" alt="">
+        </div>
+        <div class="footer-logo">
+            <img src="img/nome.png" alt="">
+        </div>
+        <div class="barco">
+            <img src="img/barco1.png" alt="">
+            <img src="img/barco2.png" alt="">
+            <img src="img/barco1.png" alt="">
+        </div>
+    </footer>
+
+    <script>
+       const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          } else {
+            entry.target.classList.remove("show");
+          }
+        });
+      }, { threshold: 0.2 });
+
+      document.querySelectorAll(".fade").forEach(el => observer.observe(el));
+
+      const popup = document.getElementById("popup");
+      const imagemExpandida = document.getElementById("imagemExpandida");
+      const fechar = document.querySelector(".fechar");
+      const imgJogo = document.querySelector(".imgJogo");
+
+      imgJogo.addEventListener("click", () => {
+        popup.style.display = "block";
+        imagemExpandida.src = imgJogo.src;
+      });
+
+      fechar.addEventListener("click", () => {
+        popup.style.display = "none";
+      });
+
+      popup.addEventListener("click", (e) => {
+        if (e.target === popup) {
+          popup.style.display = "none";
+        }
+      });
+    </script>
+</body>
+</html>
